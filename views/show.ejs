@@ -1,6 +1,26 @@
 <html>
-    <%- include("./partials/head.ejs") %>
+<%- include("./partials/head.ejs") %>
+
     <body>
-        <h1>Budgtr Show Page</h1>
+        <div class="container">
+            <h1><%= budget.name %></h1>
+
+            <form method="get" action="/budgets">
+                <button type="submit">Back</button>
+            </form>
+            <h4>Date </h4>
+            <p><%= budget.date %></p>
+            <h4>Name </h4>
+            <p><%= budget.name %></p>
+            <h4>From </h4>
+            <p><%= budget.from %></p>
+            <h4>Amount </h4>
+            <p><%= budget.amount %></p>
+            <h4>Tags </h4>
+            <p><%= budget.tags %></p>
+            
+
+        </div>
     </body>
+
 </html>

@@ -26,7 +26,9 @@ app.post("/budgets", (req, res) => {
 });
 
 app.get('/budgets/:index', (req, res) => {
-    res.render("show.ejs", {title: "Budgtr - Show Page"})
+    res.render("show.ejs", {
+        budget: budget[req.params.index], 
+        title: "Budgtr - Show Page"})
 });
 
 
