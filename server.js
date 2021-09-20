@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const budgets = require("./models/budget.js");
+const budget = require("./models/budget.js");
 const port = 3000;
 const methodOverride = require('method-override');
 
@@ -8,9 +8,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"))
 app.use(methodOverride('_method'))
 
+app.get('/', (req, res) => {
+    res.send("Hello Adult Life")
+})
 
 app.get('/budgets', (req, res) => {
-    res.render("index.ejs", {title: "Budgtr - Index Page"})
+    res.render("index.ejs", {budget, title: "Budgtr - Index Page"})
 });
 
 app.get('/budgets/new', (req, res) => {
@@ -18,7 +21,7 @@ app.get('/budgets/new', (req, res) => {
 });
 
 app.post("/budgets", (req, res) => {
-    budgets.push(req.body)
+    budget.push(req.body)
     res.redirect("/budgets")
 });
 

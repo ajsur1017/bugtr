@@ -1,7 +1,30 @@
 <html>
-    <%- include("./partials/head.ejs") %>
+<%- include("./partials/head.ejs") %>
 
     <body>
-        <h1>Budget Index</h1>
+
+        <div class="container">
+            <h1>Budgtr Index</h1>
+            <table>
+                <% for(let i=0; i < budget.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= budget[i].date %>
+                        </td>
+                        <td><a>
+                                <%= budget[i].name %>
+                            </a></td>
+                        <td>
+                            <%= budget[i].amount %>
+                        </td>
+
+                        <% } %>
+
+            </table>
+
+
+        </div>
+
     </body>
+
 </html>
