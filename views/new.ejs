@@ -4,8 +4,19 @@
     <body>
         <div class="container">
         <h1>Budgtr New Page</h1>
-        <form action="">
-            
+        <form method="get" action="/budgets">
+            <button type="submit">Back</button>
+        </form>
+        
+            <form action="/budgets" method="POST">
+                <input type="text" name="date" placeholder="Date"/> <br>
+                <input type="text" name="name" placeholder="Name"/> <br>
+                <input type="text" name="amount" placeholder="Amount"/><br>
+                <input type="text" name="from" placeholder="From"/><br>
+                <input type="text" name="tags" placeholder="Tags"><br>
+
+                <input type="submit" value="Add" />
+            </form>
         </form>
         </div>
     </body>
