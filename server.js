@@ -2,7 +2,16 @@ const express = require('express');
 const app = express();
 const budget = require("./models/budget.js");
 const port = 3000;
+const bodyParser = require('body-parser') // what is this and why did we need it?
 const methodOverride = require('method-override');
+
+// let bankAccount = 0
+// for (let i = 0; i < budget.length; i++) {
+//     const amounts = budget[i].amount;
+//     bankAccount += amounts;    
+// }
+// console.log(bankAccount)
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"))
@@ -21,6 +30,9 @@ app.get('/budgets/new', (req, res) => {
 });
 
 app.post("/budgets", (req, res) => {
+    // console.log(req.body)
+    req.body.amount = parseInt(req.body.amount) // need to be done to mutate the data before it is returned.
+    // console.log(req.body)
     budget.push(req.body)
     res.redirect("/budgets")
 });

@@ -5,6 +5,12 @@
 
         <div class="container">
             <h1>Budgtr Index</h1>
+<% let bankAccount = 0 %>
+<% for (let i = 0; i < budget.length; i++) { %>
+    <% const amounts = budget[i].amount; %>
+    <% bankAccount += amounts; %>    
+<% } %>
+            <h5>Total in Account: $<%= bankAccount %></h5>
             <table>
                 <% for(let i=0; i < budget.length; i++) { %>
                     <tr>
