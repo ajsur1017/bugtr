@@ -5,14 +5,6 @@ const port = 3000;
 const bodyParser = require('body-parser') // what is this and why did we need it?
 const methodOverride = require('method-override');
 
-// let bankAccount = 0
-// for (let i = 0; i < budget.length; i++) {
-//     const amounts = budget[i].amount;
-//     bankAccount += amounts;    
-// }
-// console.log(bankAccount)
-
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"))
 app.use(methodOverride('_method'))
